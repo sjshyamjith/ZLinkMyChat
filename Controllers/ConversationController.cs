@@ -37,7 +37,7 @@ namespace MyChatApi.Controllers
             else
             {
                 //update conversation
-                _conversationRepo.UpdateLastMessagedOn(message.ConversationId);
+                await _conversationRepo.UpdateLastMessagedOn(message.ConversationId);
             }
             var result = await _messageRepo.AddAsync(message);
             if (result != null)
